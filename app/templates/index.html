@@ -1,0 +1,259 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Tooplate">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <title>SistemComer</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href=""{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/tooplate-main.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+  </head>
+  <body>
+
+    <div class="sequence">
+  
+      <div class="seq-preloader">
+        <svg width="39" height="16" viewBox="0 0 39 16" xmlns="http://www.w3.org/2000/svg" class="seq-preload-indicator"><g fill="#F96D38"><path class="seq-preload-circle seq-preload-circle-1" d="M3.999 12.012c2.209 0 3.999-1.791 3.999-3.999s-1.79-3.999-3.999-3.999-3.999 1.791-3.999 3.999 1.79 3.999 3.999 3.999z"/><path class="seq-preload-circle seq-preload-circle-2" d="M15.996 13.468c3.018 0 5.465-2.447 5.465-5.466 0-3.018-2.447-5.465-5.465-5.465-3.019 0-5.466 2.447-5.466 5.465 0 3.019 2.447 5.466 5.466 5.466z"/><path class="seq-preload-circle seq-preload-circle-3" d="M31.322 15.334c4.049 0 7.332-3.282 7.332-7.332 0-4.049-3.282-7.332-7.332-7.332s-7.332 3.283-7.332 7.332c0 4.05 3.283 7.332 7.332 7.332z"/></g></svg>
+      </div>
+      
+    </div>
+    
+        <div class="logo">
+            <h1>SistemComer</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#1"><img src="{% static 'assets/images/icon-1.png' %}" alt=""> <em>Inicio</em></a></li>
+            <li><a id="soy2" href="#2"><img src="{% static 'assets/images/icon-2.png' %}" alt=""> <em>Inicio de sesion</em></a></li>
+            <li><a href="#3"><img src="{% static 'assets/images/icon-5.png' %}" alt=""> <em>Registro</em></a></li>
+            <li><a href="#4"><img src="{% static 'assets/images/icon-4.png' %}" alt=""> <em>Contactos</em></a></li>
+          </ul>
+        </nav>
+        
+        <div class="slides">
+          <div class="slide" id="1">
+            <div id="slider-wrapper">
+                <div id="image-slider">
+                  <ul>
+                    <li class="active-img">
+                      <div class="slide-caption">
+                        <h4>SistemComer</h4>
+                        <h2>SistemComer Lo mejor <br>para tu negocio</h2>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="slide-caption">
+                        <h4>SistemComer</h4>
+                        <h2>SistemComer Lo mejor <br>para tu negocio</h2>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="slide-caption">
+                        <h4>SistemComer</h4>
+                        <h2>SistemComer Lo mejor <br>para tu negocio</h2>
+                      </div>
+                    </li>                      
+                  </ul>
+                </div>
+                <div id="thumbnail">
+                  <ul>
+                    <li class="active"><img src="{% static 'assets/images/thumb-01.jpg' %}" alt="Earth" /></li>
+                    <li><img src="{% static 'assets/images/thumb-02.jpg' %}" alt="Meeting" /></li>
+                    <li><img src="{% static 'assets/images/thumb-03.jpg' %}" alt="Smart" /></li>         
+                  </ul>
+                </div>
+              </div>
+        </div>
+        <div class="slide" id="2">
+            <div class="content second-content">
+                <form id="contact2" method="post" onsubmit="return login();">
+                  {% csrf_token %}   
+                  <h2>Inicio de sesion</h2>
+                    <div class="col-md-4 ">
+                    <p id="names">Usuario:</p>
+                    <input class="controls" type="email" name="Usuario" id="Usuario" placeholder="Correo" >
+                    </div>
+                    <div class="col-md-4 ">
+                    <p id="names">Contraseña:</p>
+                    <input class="controls" type="password" name="Contra" id="Contra" placeholder="Contraseña">
+                    </div>
+                    <p id="ob"></p>
+                    {% if messages %}
+                      {% for msg in messages %}
+                        <h4 id="compro">{{msg}}</h4>
+                        <br>
+                      {% endfor %}
+                    {% endif %}
+                    <button id="but" type="submit" name="Ingresar">Ingresar</button>
+                </form>
+                
+            </div>
+        </div>
+        <div class="slide" id="3">
+            <div class="content third-content">
+                <div class="container-fluid">
+                        <form  class="contact2" method="POST" onsubmit="return validar();">
+                          {% csrf_token %}  
+                          <h2>Registro</h2>
+                            <div class="contact">
+                              <div class="col-xs" >
+                              <p id="names">Nombres:</p>
+                              <p id="nom"></p>
+                              <input type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
+                              </div>
+                              <div class="col-sm-3">
+                              <p id="names">Apellidos:</p>
+                              <p id="ape"></p>
+                              <input class="form-control" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
+                              </div>
+                              <div class="col-md-4">
+                              <p id="names">Correo:</p>
+                              <input class="form-control" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
+                              </div>
+                              <div class="col-md-4">
+                              <p id="names">Contraseña:</p>
+                              <input class="form-control" type="password" name="contra" id="contra" placeholder="Ingrese su Contraseña">
+                              </div>
+                            </div>
+                            <div class="contact1">
+                              <div class="col-md-4">
+                              <p id="names">Cedula:</p>
+                              <p id="cedu"></p>
+                              <input class="form-control" type="text" maxlength="10" name="cedula" id="cedula" placeholder="Ingrese su Cedula">
+                              </div>
+                              <div class="col-md-4">
+                              <p id="names">Dirección:</p>
+                              <input class="form-control" type="text" name="Direccion" id="Direccion" placeholder="Ingrese su Dirección">
+                              </div>
+                              <div class="col-md-4">
+                              <p id="names">Fecha de nacimiento:</p>
+                              <input class="form-control" type="date" name="fech" id="fech" >
+                              </div>
+                              <p id="obli"></p>
+                              <button class="bot" type="submit" name="Registro">Registrar</button>
+                              <p id="centro"><a id="redi" onclick="irainicio()" href="#">¿Ya tengo Cuenta?</a></p>
+                              {% if messages %}
+                                {% for msg in messages %}
+                                  <h4 id="compro">{{msg}}</h4>
+                                  <br>
+                                {% endfor %}
+                              {% endif %}
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+        <div class="slide" id="4">
+            <div class="content fourth-content">
+                <div class="container-fluid">
+                    <form class="contact3" action="" method="post">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <h2>Contáctanos Aquí</h2>
+                          </div>
+                          <div class="col-md-6">
+                              <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="">
+                            
+                          </div>
+                          <div class="col-md-6">
+                              <input name="email" type="text" class="form-control" id="email" placeholder="Your email..." required="">
+                            
+                          </div>
+                          <div class="col-md-12">
+                              <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required=""></textarea>
+                            
+                          </div>
+                          <div class="col-md-12">
+                              <button class="bot" type="submit"  >Enviar Ahora</button>
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+
+    <!-- Additional Scripts -->
+    <script src="{% static 'assets/js/owl.js' %}"></script>
+    <script src="{% static 'assets/js/accordations.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    <script src="{% static 'validar.js' %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            // navigation click actions 
+            $('.scroll-link').on('click', function(event){
+                event.preventDefault();
+                var sectionID = $(this).attr("data-id");
+                scrollToID('#' + sectionID, 750);
+            });
+            // scroll to top action
+            $('.scroll-top').on('click', function(event) {
+                event.preventDefault();
+                $('html, body').animate({scrollTop:0}, 'slow');         
+            });
+            // mobile nav toggle
+            $('#nav-toggle').on('click', function (event) {
+                event.preventDefault();
+                $('#main-nav').toggleClass("open");
+            });
+        });
+        // scroll function
+        function scrollToID(id, speed){
+            var offSet = 0;
+            var targetOffset = $(id).offset().top - offSet;
+            var mainNav = $('#main-nav');
+            $('html,body').animate({scrollTop:targetOffset}, speed);
+            if (mainNav.hasClass("open")) {
+                mainNav.css("height", "1px").removeClass("in").addClass("collapse");
+                mainNav.removeClass("open");
+            }
+        }
+        if (typeof console === "undefined") {
+            console = {
+                log: function() { }
+            };
+        }
+    
+    var cedu= document.getElementById('cedula');
+    cedu.addEventListener('keyup', (e) => {
+    let valorInput = e.target.value;
+
+    cedu.value = valorInput
+        // Eliminamos espacios en blanco
+        .replace(/\s/g, '')
+        // Eliminar las letras
+        .replace(/\D/g, '')
+        // Ponemos espacio cada cuatro numeros
+        .replace(/([0-9]{10})/g, '$1 ')
+        // Elimina el ultimo espaciado
+        .trim();
+    });
+
+    function irainicio(){
+        document.querySelector('#soy2').click();
+    }
+    </script>
+
+  </body>
+</html>

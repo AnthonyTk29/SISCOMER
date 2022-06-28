@@ -1,0 +1,89 @@
+#centro {
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 30px;
+    color: white;
+}
+
+#redi {
+    text-decoration: none;
+    color: white;
+}
+
+#names {
+    height: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    margin-bottom: 0px;
+}
+
+#cedu {
+    display: none;
+    position: relative;
+    font-size: 15px;
+    top: 20%;
+}
+
+#celu {
+    display: none;
+    position: relative;
+    font-size: 15px;
+    top: 20%;
+}
+
+#nom {
+    display: none;
+    position: relative;
+    font-size: 15px;
+    top: 20%;
+}
+
+#ape {
+    display: none;
+    position: relative;
+    font-size: 15px;
+    top: 20%;
+}
+
+#obli {
+    display: none;
+    font-size: 15px;
+    line-height: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#compro {
+    color: red;
+}
+
+#ob {
+    display: none;
+    font-size: 15px;
+    line-height: 5px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.bot {
+    background-image: linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%);
+    margin: 0px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+}
+
+.bot:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}

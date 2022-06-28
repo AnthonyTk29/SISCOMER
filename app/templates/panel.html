@@ -1,0 +1,28 @@
+{% if request.session.Usuario %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administrador</title>
+
+  {%include 'menu.html' %}
+
+  
+  <div class="content-wrapper">
+    
+    {{request.session.Usuario}}&nbsp;&nbsp;<a href="{% url 'cerrarsesion' %}">Cerrar sesion</a>
+    
+      {%include 'datos.html' %}
+      {%include 'tablas.html' %}
+  </div>
+<!-- /.content-wrapper -->
+  {% include 'footer.html' %}
+</body>
+</html>
+{% else %}
+  <script>
+    location.href ='http://127.0.0.1:8000';
+  </script>
+{% endif %}
